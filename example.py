@@ -4,9 +4,9 @@ def run_alexnet():
     alexnet = fe.CaffeFeatureExtractor(
             model_path="alexnet_deploy.prototxt",
             pretrained_path="alexnet.caffemodel",
-            blob="fc6",
+            blob="fc7",
             crop_size=227,
-            meanfile_path="imagenet_mean.npy"
+            meanfile_path="cifar10_mean.npy"
             )
     fe.create_dataset(net=alexnet, datalist="train.txt", dbprefix="alexnet_train")
     fe.create_dataset(net=alexnet, datalist="test.txt", dbprefix="alexnet_test")
@@ -46,6 +46,6 @@ def run_googlenet():
 
 if __name__ == "__main__":
     run_alexnet()
-    run_vgg16_fc7()
-    run_vgg16_fc6()
-    run_googlenet()
+    #run_vgg16_fc7()
+    #run_vgg16_fc6()
+    #run_googlenet()
